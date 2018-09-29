@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerControl : MonoBehaviour {
     public float moveSpeed;
@@ -61,5 +62,16 @@ public class PlayerControl : MonoBehaviour {
             anim.SetBool("Idle", true);
         }
         
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Door")
+        {
+            // シーン名を取得
+            string sceneName = collision.gameObject.GetComponent<Door>().nextScene;
+            // シーンチェンジ
+            SceneManager.LoadScene(sceneName);
+        }
     }
 }

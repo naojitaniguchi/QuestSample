@@ -8,4 +8,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/lecture/0928.unity
+    guid: b912db04ee9324958a155f1982672138
+  - enabled: 1
+    path: Assets/Scenes/SampleSceneCameraChase.unity
+    guid: 6604ae4c33be74a0dada3253d84b8ba4
   m_configObjects: {}
