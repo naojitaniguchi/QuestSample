@@ -8,8 +8,19 @@ public class PlayerControl : MonoBehaviour {
     Animator anim;
     Rigidbody2D r2d;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start()
+    {
+
+        if (ScenePosition.positionTable != null)
+        {
+            if ( ScenePosition.positionTable[SceneManager.GetActiveScene().name] != null){
+                Debug.Log(ScenePosition.positionTable[SceneManager.GetActiveScene().name]);
+                Vector3 pos = (Vector3)ScenePosition.positionTable[SceneManager.GetActiveScene().name];
+                gameObject.transform.position = new Vector3(pos.x, pos.y, pos.z);
+            }
+        }
+    
         anim = gameObject.GetComponent<Animator>();
         r2d = gameObject.GetComponent<Rigidbody2D>();
 	}
@@ -61,7 +72,16 @@ public class PlayerControl : MonoBehaviour {
             Input.GetKeyUp(KeyCode.LeftArrow) || Input.GetKeyUp(KeyCode.RightArrow) ){
             anim.SetBool("Idle", true);
         }
-        
+
+        if ( Input.GetKeyDown( KeyCode.A)){
+            ScenePosition.AddScenePos(SceneManager.GetActiveScene().name, gameObject.transform.position);
+            SceneManager.LoadScene("Scenes/Stage2");
+        }
+        if (Input.GetKeyDown(KeyCode.B))
+        {
+            SceneManager.LoadScene("lecture/CallFungusSmaple");
+        }
+
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
