@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Door
+  - Enemy
+  - Laser
+  - Talk
   layers:
   - Default
   - TransparentFX

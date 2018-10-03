@@ -73,5 +73,10 @@ public class PlayerControl : MonoBehaviour {
             // シーンチェンジ
             SceneManager.LoadScene(sceneName);
         }
+        if (collision.gameObject.tag == "Talk")
+        {
+            // Fungusを呼ぶ
+            collision.gameObject.GetComponent<Talk>().startTalk();
+        }
     }
 }
