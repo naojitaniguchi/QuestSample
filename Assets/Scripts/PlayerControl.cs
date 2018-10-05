@@ -7,6 +7,7 @@ public class PlayerControl : MonoBehaviour {
     public float moveSpeed;
     Animator anim;
     Rigidbody2D r2d;
+    public GameObject flowObject;
 
     // Use this for initialization
     void Start()
@@ -80,6 +81,9 @@ public class PlayerControl : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.B))
         {
             SceneManager.LoadScene("lecture/CallFungusSmaple");
+        }
+        if (Input.GetKeyDown(KeyCode.Z)){
+            flowObject.SetActive(true);
         }
 
     }
