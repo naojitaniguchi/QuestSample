@@ -6,6 +6,7 @@ using UnityEngine.EventSystems;
 
 public class SpriteClick : MonoBehaviour, IPointerClickHandler
 {
+    public GameObject flowObject;
 
 	// Use this for initialization
 	void Start () {
@@ -21,5 +22,8 @@ public class SpriteClick : MonoBehaviour, IPointerClickHandler
     {
         //ここにクリックしたときの処理
         Debug.Log(eventData);
+        if ( !flowObject.activeSelf){
+            flowObject.SetActive(true);
+        }
     }
 }
